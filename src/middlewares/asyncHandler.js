@@ -1,0 +1,4 @@
+// Repassa erros de funções async para o errorHandler (evita try/catch em todo controller).
+const asyncHandler = (fn) => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next);
+
+module.exports = asyncHandler;
