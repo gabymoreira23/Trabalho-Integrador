@@ -1,0 +1,8 @@
+const express = require("express");
+const asyncHandler = require("../middlewares/asyncHandler");
+const controller = require("./dashboard.controller");
+
+const router = express.Router();
+router.get("/", asyncHandler(controller.resumo));
+
+module.exports = router;
